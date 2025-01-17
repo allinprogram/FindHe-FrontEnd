@@ -129,7 +129,11 @@ export default {
       const diff = now - time;
       const diffDays = Math.floor(diff / (1000 * 60 * 60 * 24));
       const diffHours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      return `${diffDays}天${diffHours}小时前`;
+      if (diffDays > 0) {
+        return `${diffDays}天${diffHours}小时前`;
+      } else {
+        return `${diffHours}小时前`;
+      }
     },
   },
   mounted() { },
