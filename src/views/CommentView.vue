@@ -39,7 +39,7 @@
       <div v-for="comment in commentList">
         <p class="text-lg text-success">{{ comment.nickname }}</p>
         <p class="mx-4">{{ comment.content }}</p>
-        <time class="text-xs opacity-50 ml-2 flex justify-end">{{ comment.publishTime }}</time>
+        <time class="text-xs opacity-50 ml-2 flex justify-end">{{ formatTime(comment.publishTime) }}</time>
       </div>
     </div>
   </div>
@@ -122,6 +122,14 @@ export default {
         console.error(error);
         this.response = { code: 0, message: "请联系公众号进行处理！" };
       }
+    },
+    formatTime(publishTime) {
+      const now = new Date();
+      const time = new Date(publishTime);
+      const diff = now - time;
+      const diffDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const diffHours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      return `${diffDays}天${diffHours}小时前`;
     },
   },
   mounted() { },
