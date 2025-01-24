@@ -22,9 +22,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            <span>在上面输入分享链接后戳Go！</span>
+            <span>在上面输入分享链接后戳Go即可处理。<br>祝各位新年快乐，25年大吉大利！</span>
         </div>
-
         <div class="alert alert-success" v-else-if="response.code === 1">
             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
                 viewBox="0 0 24 24">
@@ -32,6 +31,46 @@
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span>处理成功！</span>
+            <details class="dropdown">
+                <summary class="btn m-1">赞助服务</summary>
+                <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                    <li><button onclick="my_modal_199.showModal()">￥1.99</button></li>
+                    <dialog id="my_modal_199" class="modal">
+                        <div class="modal-box">
+                            <img src="../assets/image/1.99.jpg">
+                            <div class="modal-action">
+                                <form method="dialog">
+                                    <button class="btn">关闭</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
+                    <li><button onclick="my_modal_520.showModal()">￥5.20</button></li>
+                    <dialog id="my_modal_520" class="modal">
+                        <div class="modal-box">
+                            <img src="../assets/image/5.20.jpg">
+                            <div class="modal-action">
+                                <form method="dialog">
+                                    <button class="btn">关闭</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
+                    <li><button onclick="my_modal_999.showModal()">￥9.99</button></li>
+                    <dialog id="my_modal_999" class="modal">
+                        <div class="modal-box">
+                            <img src="../assets/image/9.99.jpg">
+                            <div class="modal-action">
+                                <form method="dialog">
+                                    <button class="btn">关闭</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
+                </ul>
+
+
+            </details>
             <a target="_blank" :href="'https://nclgclub.com/outgoing?url=' + response.data" class="btn">
                 点我跳转
             </a>
