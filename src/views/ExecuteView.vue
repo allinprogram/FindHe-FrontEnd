@@ -5,7 +5,7 @@
         <form @submit.prevent="submitForm">
             <div class="form-control">
                 <div class="join">
-                    <input type="url" placeholder="小红书/网易云音乐/QQ音乐/汽水音乐/微博分享链接"
+                    <input type="text" placeholder="小红书/网易云音乐/QQ音乐/汽水音乐/微博分享链接"
                         class="input input-bordered join-item input-success w-full" v-model="url" required />
                     <button class="btn join-item rounded-r-full" type="submit" :disabled="loading">
                         <span v-if="loading" class="loading loading-spinner loading-md"></span>
@@ -120,7 +120,7 @@
 </template>
 
 <script>
-alert("做这个工具的初衷不是让某些人用来卖钱甚至骗人的，我没有挣一分钱，网站甚至没有广告。为了防止滥用，现在只能通过微信公众号打开使用！");
+alert("做这个工具的初衷不是让某些人用来卖钱甚至骗人的，期间没有挣一分钱，网站甚至没有广告。为了防止滥用，现在请通过微信公众号打开使用！");
 
 export default {
     data() {
@@ -141,13 +141,13 @@ export default {
             this.response = {}; // 清空响应数据
             await new Promise(resolve => setTimeout(resolve, 1666));
             try {
-                const response = await fetch('/api/parse', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ shareUrl: this.url }),
-                });
+                const shareUrl = this.extractUrl(this.url);
+                if (!shareUrl) {
+                    alert('未检测到有效链接，请重新输入！');
+                    this.loading = false;
+                    return;
+                }
+                const response = await this.fetchParsedUrl(shareUrl);
                 this.response = await response.json();
                 this.url = ''; // 清空输入框
             } catch (error) {
@@ -156,6 +156,20 @@ export default {
             } finally {
                 this.loading = false;
             }
+        },
+        extractUrl(text) {
+            const urlPattern = /(https?:\/\/[^\s]+)/g;
+            const urls = text.match(urlPattern);
+            return urls ? urls[0] : null;
+        },
+        async fetchParsedUrl(shareUrl) {
+            return fetch('/api/parse', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ shareUrl }),
+            });
         }
     },
     computed: {
@@ -167,9 +181,7 @@ export default {
             const timeDiff = currentDate.getTime() - startDate.getTime();
 
             // 将毫秒转换为天数
-            const daysPassed = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-
-            return daysPassed;
+            return Math.floor(timeDiff / (1000 * 60 * 60 * 24));
         }
     }
 };
