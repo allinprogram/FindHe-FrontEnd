@@ -69,7 +69,7 @@
                   希望我们都能令自己的生活充实起来！💪
                 </p>
                 <div class="modal-action">
-                  <label for="my_modal_7" class="btn">Close</label>
+                  <label for="my_modal_7" class="btn">好！</label>
                 </div>
               </div>
             </div>

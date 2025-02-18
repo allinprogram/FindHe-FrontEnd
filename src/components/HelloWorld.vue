@@ -16,6 +16,12 @@ defineProps({
       很多时候，令我们感到痛苦的不是<span> TA </span>不爱你，
       而是那个爱着<span> TA </span>的自己却只能小心地去偷偷关注<span> TA </span>的各种动态。
     </h3>
+
+    <div class="divider"></div>
+
+    <div class="justify-center items-center">
+      <img src="../assets/qr_code.png">
+    </div>
   </div>
 </template>
 
