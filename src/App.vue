@@ -11,10 +11,10 @@ import HelloWorld from './components/HelloWorld.vue'
       <HelloWorld msg="找到TA！" />
 
       <nav>
-        <RouterLink to="/"><b>主页</b></RouterLink>
-        <RouterLink to="/start"><b>开始</b></RouterLink>
-        <RouterLink to="/comment"><b>留言</b></RouterLink>
-        <RouterLink to="/about"><b>关于</b></RouterLink>
+        <RouterLink to="/"><b style="font-size: large;">主页</b></RouterLink>
+        <RouterLink to="/start"><b style="font-size: large;">开始</b></RouterLink>
+        <RouterLink to="/comment"><b style="font-size: large;">留言</b></RouterLink>
+        <RouterLink to="/about"><b style="font-size: large;">关于</b></RouterLink>
       </nav>
     </div>
   </header>
@@ -35,7 +35,7 @@ header {
 
 nav {
   width: 100%;
-  font-size: 12px;
+  font-size: 20px;
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
