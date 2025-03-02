@@ -120,7 +120,7 @@
 </template>
 
 <script>
-alert("做这个工具的初衷不是让某些人用来卖钱甚至骗人的，期间没有挣一分钱，网站甚至没有广告。为了防止滥用，现在请通过微信公众号打开使用！");
+alert("希望你使用这个工具是为了爱情而不是利益，为了防止某些坏人滥用，请通过微信公众号打开使用！");
 
 export default {
     data() {
@@ -152,7 +152,7 @@ export default {
                 this.url = ''; // 清空输入框
             } catch (error) {
                 console.error(error);
-                this.response = { code: 0, message: '请联系公众号进行处理！' };
+                this.response = { code: 0, message: '可以前往公众号加群寻求帮助。' };
             } finally {
                 this.loading = false;
             }
@@ -172,17 +172,5 @@ export default {
             });
         }
     },
-    computed: {
-        daysPassed() {
-            const startDate = new Date('2022-01-01'); // 设置开始日期
-            const currentDate = new Date(); // 获取当前日期
-
-            // 计算日期差值（以毫秒为单位）
-            const timeDiff = currentDate.getTime() - startDate.getTime();
-
-            // 将毫秒转换为天数
-            return Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-        }
-    }
 };
 </script>
