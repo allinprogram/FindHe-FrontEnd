@@ -107,9 +107,9 @@
             <li class="italic">小红书</li>
             <li class="italic">汽水音乐</li>
             <li class="italic">网易云音乐</li>
-            <li class="italic">QQ音乐（用户主页需要登陆自己账号后才能查看）</li>
-
-            若出现任何问题，可以通过公众号进行反馈以获得帮助。<br>当然,也欢迎闲聊～
+            <li class="italic">QQ音乐</li>
+            <br>
+            若出现任何问题，可以通过微信公众号进行反馈以获得帮助。<br>
         </div>
 
         <div class="divider mt-8 font-bold" style="color: hsla(160, 100%, 37%, 1);">免责声明</div>

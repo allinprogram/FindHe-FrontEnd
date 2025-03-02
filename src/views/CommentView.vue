@@ -18,24 +18,27 @@
       <form @submit.prevent="submitComment">
         <label class="input input-bordered flex items-center mt-2">
           称呼
-          <input v-model="nickname" type="text" class="grow ml-2" placeholder="怎么称呼你？" required />
+          <input v-model="nickname" type="text" class="grow ml-2" placeholder="将会被显示在留言板的名字。" required />
         </label>
         <label class="input input-bordered flex items-center mt-2">
           联系
-          <input v-model="contact" type="text" class="grow ml-2" placeholder="可以是邮箱甚至可以是邮编！" required />
+          <input v-model="contact" type="text" class="grow ml-2" placeholder="若希望得到回复请输入有效联系方式。" required />
         </label>
         <label class="input input-bordered flex items-center mt-2">
           留言
-          <input v-model="content" type="text" class="grow ml-2" placeholder="有什么想说的？" required />
+          <input v-model="content" type="text" class="grow ml-2" placeholder="有什么想留下的话语吗？" required />
         </label>
-        <div class="flex justify-end mt-2">
+        <div class="tooltip flex justify-end mt-2">
+          <div class="tooltip-content">
+            <div class="animate-bounce text-orange-400 -rotate-10 text-2xl font-black">Wow!</div>
+          </div>
           <button class="btn btn-success" type="submit">提交</button>
         </div>
       </form>
     </div>
 
     <!-- 分割线 -->
-    <div class="divide-y divide-dashed divide-gray-700" >
+    <div class="divide-y divide-dashed divide-gray-700">
       <div v-for="comment in commentList">
         <p class="text-lg text-success">{{ comment.nickname }}</p>
         <p class="mx-4">{{ comment.content }}</p>
@@ -120,7 +123,7 @@ export default {
 
       } catch (error) {
         console.error(error);
-        this.response = { code: 0, message: "请联系公众号进行处理！" };
+        this.response = { code: 0, message: "发生异常，可以通过微信公众号进行反馈。" };
       }
     },
     formatTime(publishTime) {
