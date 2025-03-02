@@ -12,6 +12,7 @@
     </div>
 
     <p class="flex justify-center">欢迎你来到这里，同时也欢迎你在这里畅所欲言，分享自己的故事~</p>
+    <span>请勿担心隐私问题，留言内容将会被公开展示，但是联系方式将只有你我可见。</span>
 
     <!-- TODO 提交后数据插入现在的list -->
     <div class="container">
