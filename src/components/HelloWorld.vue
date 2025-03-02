@@ -22,6 +22,12 @@ defineProps({
     <div class="justify-center items-center">
       <img src="../assets/qr_code.png">
     </div>
+
+    <div class="divider">百度推广</div>
+
+    <a href="https://dash.justfancy.net/register?code=Fk2ylIn8" target="_blank">
+      <h3>做外贸、追外国爱豆遇见网络不好使？仅需15元/月，4K无压力！</h3>
+    </a>
   </div>
 </template>
 
